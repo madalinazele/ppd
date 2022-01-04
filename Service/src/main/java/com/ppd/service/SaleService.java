@@ -42,9 +42,9 @@ public class SaleService {
         soldSeatRepository.deleteAll();
         eventRepository.deleteAll();
 
-        eventRepository.save(new Event(1, LocalDateTime.now().toString(), "Show1", new BigDecimal(20), new BigDecimal(0), 1, ""));
-        eventRepository.save(new Event(2, LocalDateTime.now().toString(), "Show2", new BigDecimal(30), new BigDecimal(0), 2, ""));
-        eventRepository.save(new Event(3, LocalDateTime.now().toString(), "Show3", new BigDecimal(50), new BigDecimal(0), 3, ""));
+        eventRepository.save(new Event(1, LocalDateTime.now().toString(), "Show1", new BigDecimal(100), new BigDecimal(0), 1, ""));
+        eventRepository.save(new Event(2, LocalDateTime.now().toString(), "Show2", new BigDecimal(200), new BigDecimal(0), 2, ""));
+        eventRepository.save(new Event(3, LocalDateTime.now().toString(), "Show3", new BigDecimal(150), new BigDecimal(0), 3, ""));
     }
 
     public synchronized List<Sale> getAllEventSales(Long eventID) {

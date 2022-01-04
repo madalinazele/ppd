@@ -27,8 +27,7 @@ public class Server {
 
     public void run() {
         long startTime = System.nanoTime();
-
-        long lifeSpan = TimeUnit.NANOSECONDS.convert(1, TimeUnit.MINUTES);
+        long lifeSpan = TimeUnit.NANOSECONDS.convert(2, TimeUnit.MINUTES);
         long sleepTime = TimeUnit.MILLISECONDS.convert(5, TimeUnit.SECONDS);
 
         while (System.nanoTime() - startTime < lifeSpan) {

@@ -27,24 +27,6 @@ public class Client extends Thread {
         return execute(() -> restTemplate.postForObject(URL + "/book", bookRequest, Boolean.class));
     }
 
-    private int generateRandom(int maxValue) {
-        return random.nextInt(maxValue) + 1;
-    }
-
-    private List<Integer> generateRandomSeats(int maxNoSeats, int maxSeatNumber) {
-        List<Integer> seats = new ArrayList<>();
-
-        int nr = generateRandom(maxNoSeats);
-        for (int i = 0; i < nr; ++i) {
-            int seat = generateRandom(maxSeatNumber);
-            while (seats.contains(seat)) {
-                seat = generateRandom(maxSeatNumber);
-            }
-            seats.add(seat);
-        }
-        return seats;
-    }
-
     @Override
     public void run() {
         long startTime = System.nanoTime();
@@ -75,5 +57,23 @@ public class Client extends Thread {
                 System.out.println("Client stopped!");
             }
         }
+    }
+
+    private int generateRandom(int maxValue) {
+        return random.nextInt(maxValue) + 1;
+    }
+
+    private List<Integer> generateRandomSeats(int maxNoSeats, int maxSeatNumber) {
+        List<Integer> seats = new ArrayList<>();
+
+        int nr = generateRandom(maxNoSeats);
+        for (int i = 0; i < nr; ++i) {
+            int seat = generateRandom(maxSeatNumber);
+            while (seats.contains(seat)) {
+                seat = generateRandom(maxSeatNumber);
+            }
+            seats.add(seat);
+        }
+        return seats;
     }
 }
